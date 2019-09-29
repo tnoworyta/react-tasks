@@ -8,8 +8,20 @@ export default class UserNew extends Component {
 
   constructor(props) {
     super(props)
-    this.state = { name: '', surname: '' }
+    this.state = { name: '', surname: '', success: false, counter: 0 }
   }
+
+  componentDidMount() {
+    this.myInterval = setInterval(() => {
+      this.setState((state)=> ({counter: state.counter + 1}))
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.myInterval)
+  }
+
+
 
   handleNameChange = event => {
     this.setState({ name: event.target.value })
@@ -20,15 +32,19 @@ export default class UserNew extends Component {
   }
 
   handleOnclick = () => {
+    this.setState({success: true})
     this.props.handleAddUserClick(this.state)
   }
 
   render() {
     return (
       <div>
-        Name <input onChange={this.handleNameChange} />
-        Surname <input onChange={this.handleSurnameChange} />
+        Your are here for {this.state.counter} seconds
+        <br />
+        Name <input name="name" onChange={this.handleNameChange} />
+        Surname <input name="surnmae" onChange={this.handleSurnameChange} />
         <button onClick={this.handleOnclick}>Add</button>
+        {this.state.success && <div className="notice">User added!</div>}
       </div>
     )
   }

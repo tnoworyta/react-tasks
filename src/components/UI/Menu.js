@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 
 export default function UIMenu() {
   return (
+    <React.Fragment>
+    <div className="title">Some test app</div>
     <ul>
       <li>
         <Link to="/user/list">Users</Link>
@@ -14,5 +16,6 @@ export default function UIMenu() {
         <Link to="/product/list">Products</Link>
       </li>
     </ul>
+    </React.Fragment>
   )
 }
