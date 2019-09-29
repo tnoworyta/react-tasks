@@ -1,10 +1,11 @@
 import React from 'react'
+import { PropTypes } from 'prop-types'
 import { Link } from 'react-router-dom'
 
-export default function UIMenu() {
+const UIMenu = ({title}) => {
   return (
     <React.Fragment>
-    <div className="title">Some test app</div>
+    <div className="title">{title || 'Some test app'}</div>
     <ul>
       <li>
         <Link to="/user/list">Users</Link>
@@ -19,3 +20,9 @@ export default function UIMenu() {
     </React.Fragment>
   )
 }
+
+UIMenu.propTypes = {
+  title: PropTypes.string,
+}
+
+export default UIMenu

@@ -5,7 +5,7 @@ exports[`<Menu /> renders component 1`] = `
   <div
     className="title"
   >
-    Some test app
+    Some title
   </div>
   <ul>
     <li>
