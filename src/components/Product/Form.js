@@ -3,7 +3,7 @@ import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-const SignupSchema = Yup.object().shape({
+const ProductSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Too Short!')
     .max(10, 'Too Long!')
@@ -20,7 +20,7 @@ const ProductForm = ({ product }) => {
       <h1>Edit User</h1>
       <Formik
         initialValues={product}
-        validationSchema={SignupSchema}
+        validationSchema={ProductSchema}
         onSubmit={(values, actions) => {
           actions.setSubmitting(false);
           console.log('Submiting....')
