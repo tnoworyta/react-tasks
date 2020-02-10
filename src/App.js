@@ -1,10 +1,15 @@
-import React from 'react'
-import './App.css'
+import React from 'react';
+import './App.css';
 
-import ScreenRoots from './screens/Roots'
+import ScreenRoots from './screens/Roots';
+import ErrorBoundary from 'components/ErrorBoundry';
 
 function App() {
-  return <ScreenRoots />
+  return (
+    <ErrorBoundary>
+      <ScreenRoots />
+    </ErrorBoundary>
+  );
 }
 
-export default App
+export default App;
