@@ -1,46 +1,41 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import UserNew from './New';
 import UserDetails from './Details';
 
-export default class UserList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: [
-        {
-          name: 'Example name',
-          surname: 'Example surname',
-          id: new Date().getTime().toString(),
-        },
-      ],
-    };
-  }
+const UserList = () => {
+  const initialState = [
+    {
+      name: 'Example name',
+      surname: 'Example surname',
+      id: new Date().getTime().toString(),
+    },
+  ];
+  const [users, setUsers] = useState(initialState);
 
-  handleAddUserClick = (user) => {
-    this.setState((state) => ({
-      users: state.users.concat({
+  const handleAddUserClick = (user) => {
+    setUsers(
+      users.concat({
         name: user.name,
         surname: user.surname,
         id: new Date().getTime().toString(),
       }),
-    }));
+    );
   };
 
-  render() {
-    const { users } = this.state;
-    return (
-      <div>
-        <UserNew handleAddUserClick={this.handleAddUserClick} />
-        <h3>User list Updated</h3>
-        <ul className="user-list">
-          {users.map((user) => (
-            <li key={user.id}>
-              <UserDetails user={user} />
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <UserNew handleAddUserClick={handleAddUserClick} />
+      <h3>User list Updated</h3>
+      <ul className="user-list">
+        {users.map((user) => (
+          <li key={user.id}>
+            <UserDetails user={user} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default UserList;
