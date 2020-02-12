@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import UIMenu from '../../components/UI/Menu'
-import UserList from '../../components/User/List'
+import UIMenu from '../../components/UI/Menu';
+import UserList from '../../components/User/List';
 
 export default function ScreensUserList() {
   return (
@@ -9,5 +9,5 @@ export default function ScreensUserList() {
       <UIMenu />
       <UserList />
     </div>
-  )
+  );
 }

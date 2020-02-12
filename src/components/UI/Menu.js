@@ -2,10 +2,13 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import LocaleContext from 'localeContext';
+
 const UIMenu = ({ title }) => {
   return (
     <React.Fragment>
       <div className="title">{title || 'Some test app'}</div>
+      <LocaleContext.Consumer>{(locale) => <div>Locale: {locale}</div>}</LocaleContext.Consumer>
       <ul>
         <li>
           <Link to="/user/list">Users</Link>

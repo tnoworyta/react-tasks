@@ -7,6 +7,9 @@ exports[`<Menu /> renders component 1`] = `
   >
     Some title
   </div>
+  <ContextConsumer>
+    <Component />
+  </ContextConsumer>
   <ul>
     <li>
       <Link
