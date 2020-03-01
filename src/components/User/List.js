@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 
 import UserNew from './New';
 import UserDetails from './Details';
+import MessageHistory from '../../components/MessageHistory/MessageHistory';
+import PinnedMessage from '../../components/MessageHistory/PinnedMessage';
+import Message from '../../components/MessageHistory/Message';
+import BotMessage from '../../components/MessageHistory/BotMessage';
 
 const UserList = () => {
   const initialState = [
@@ -23,6 +27,8 @@ const UserList = () => {
     );
   };
 
+  const user = { name: 'John Doe', id: 'johndoe1' };
+
   return (
     <div>
       <UserNew handleAddUserClick={handleAddUserClick} />
@@ -34,6 +40,11 @@ const UserList = () => {
           </li>
         ))}
       </ul>
+      <MessageHistory>
+        <PinnedMessage text="The last deadline at 23rd March" />
+        <Message text="Hello" user={user} />
+        <BotMessage text="You have asked me to remind you to deploy at 13:00PM" user={user} />
+      </MessageHistory>
     </div>
   );
 };
