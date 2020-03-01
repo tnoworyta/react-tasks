@@ -19,6 +19,9 @@ const UIMenu = ({ title }) => {
         <li>
           <Link to="/product/list">Products</Link>
         </li>
+        <li>
+          <Link to="/shops/list">Shops</Link>
+        </li>
       </ul>
     </React.Fragment>
   );

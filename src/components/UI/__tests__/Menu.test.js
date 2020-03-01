@@ -14,7 +14,7 @@ describe('<Menu />', () => {
   test('renders with correct elements', () => {
     const wrapper = setup({ title: 'Some other title' });
     expect(wrapper.find('.title')).toHaveLength(1);
-    expect(wrapper.find('li')).toHaveLength(3);
+    expect(wrapper.find('li')).toHaveLength(4);
     expect(wrapper.find('.title').text()).toEqual('Some other title');
   });
 });

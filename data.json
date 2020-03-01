@@ -1,0 +1,12 @@
+{
+  "shops": [
+    {
+      "name": "Lidl",
+      "location": "Brzeszcze"
+    },
+    {
+      "name": "Intermarche",
+      "location": "Brzeszcze"
+    }
+  ]
+}
