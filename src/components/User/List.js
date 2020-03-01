@@ -6,6 +6,9 @@ import MessageHistory from '../../components/MessageHistory/MessageHistory';
 import PinnedMessage from '../../components/MessageHistory/PinnedMessage';
 import Message from '../../components/MessageHistory/Message';
 import BotMessage from '../../components/MessageHistory/BotMessage';
+import StatusFeed from '../../components/StatusFeed';
+import ActiveUsersStaus from '../../components/StatusFeed/ActiveUsersStaus';
+import ActivePurchasesStaus from '../../components/StatusFeed/ActivePurchasesStaus';
 
 const UserList = () => {
   const initialState = [
@@ -45,6 +48,14 @@ const UserList = () => {
         <Message text="Hello" user={user} />
         <BotMessage text="You have asked me to remind you to deploy at 13:00PM" user={user} />
       </MessageHistory>
+      <StatusFeed>
+        {(stats) => (
+          <div>
+            <ActiveUsersStaus stats={stats} />
+            <ActivePurchasesStaus stats={stats} />
+          </div>
+        )}
+      </StatusFeed>
     </div>
   );
 };
