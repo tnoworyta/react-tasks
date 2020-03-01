@@ -8,5 +8,7 @@
       "name": "Intermarche",
       "location": "Brzeszcze"
     }
-  ]
+  ],
+  "a": { "text": "First" },
+  "b": { "text": "Second" }
 }
