@@ -44,9 +44,9 @@ const UserList = () => {
         ))}
       </ul>
       <MessageHistory>
-        <PinnedMessage text="The last deadline at 23rd March" />
+        <PinnedMessage user={user} text="The last deadline at 23rd March" />
         <Message text="Hello" user={user} />
-        <BotMessage text="You have asked me to remind you to deploy at 13:00PM" user={user} />
+        <BotMessage text="You have asked me to remind you to deploy at 13:00PM" />
       </MessageHistory>
       <StatusFeed>
         {(stats) => (

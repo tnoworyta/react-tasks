@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Message from './Message';
+
 export const PinnedMessage = (props) => {
   return (
     <div>
@@ -8,7 +10,7 @@ export const PinnedMessage = (props) => {
         📌
       </span>{' '}
       Pinned:
-      {props.text}
+      <Message user={props.user} text={props.text} />
     </div>
   );
 };
